@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="progress-wizard.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+
+<body>
+
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contestModal" onclick="modalInit();">
+        Create Contest
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="contestModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content row">
+                <div class="col-sm-2 prog-bar nopadding" style="height:100%;">
+                    <ul class="progress-indicator stepped stacked nocenter">
+                        <li class="completed">
+                            <span class="bubble"></span>
+                            <span class="stacked-text">Room Type Selection</span>
+                        </li>
+                        <li>
+                            <span class="bubble"></span>
+                            <span class="stacked-text">Features &amp; Dimensions</span>
+                        </li>
+                        <li>
+                            <span class="bubble"></span>
+                            <span class="stacked-text">Upload Pictures</span>
+                        </li>
+                        <li>
+                            <span class="bubble finalStep"></span>
+                            <span class="stacked-text">Finalize Details</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-10 nopadding">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="clearModalData();">&times;</button>
+                        <h5 class="modal-title">Create Contest</h5>
+                    </div>
+
+                    <div id="step1" class="modal-body">
+                        <h6 class="b3header">Select your room(s)</h6>
+                        <ul id="roomList" class="nopadding">
+
+                        </ul>
+                    </div>
+                    <div id="step2" class="modal-body row hidden">
+
+                        <div class="col-sm-12">
+                            <h6 id="modalLabel" class="b3header"></h6>
+                            <ul id="features" class="nopadding"></ul>
+                        </div>
+                        <div class="divider col-sm-12">
+                            <hr>
+                        </div>
+                        <div class="col-sm-12">
+                            <h6 id="dxHeader" class="b3header">Dimensions</h6>
+                        </div>
+
+                        <div id="unitMeters" class="col-sm-9 pull-xs-left">
+                            <input id="widthInput" type="number" class="input dxIn" placeholder="width" data-value="0" min="0" max="50"/>
+                            <input id="lengthInput" type="number" class="input dxIn" placeholder="length" data-value="1" min="0" max="50"/>
+                            <input id="heightInput" type="number" class="input dxIn" placeholder="height" data-value="2" min="0" max="50"/>
+                            <p class="dxInLabel">width</p>
+                            <p class="dxInLabel">length</p>
+                            <p class="dxInLabel">height</p>
+                        </div>
+                        <div id="unitFeet" class="col-sm-9 pull-xs-left hidden">
+                            
+                            <input id="widthFin" type="number" class="input dxInFeet" placeholder="ft" min="0" max="100"/>
+                            <input id="widthIin" type="number" class="input dxInFeet" placeholder="in" min="0" max="100"/>
+
+                            <input id="lengthFin" type="number" class="input dxInFeet" placeholder="ft" min="0" max="100"/>
+                            <input id="lengthIin" type="number" class="input dxInFeet" placeholder="in" min="0" max="100"/>
+
+                            <input id="heightFin" type="number" class="input dxInFeet" placeholder="ft" min="0" max="100"/>
+                            <input id="heightIin" type="number" class="input dxInFeet" placeholder="in" min="0" max="100"/>
+            
+                            <p class="dxInLabel revealMe">width</p>
+                            <p class="dxInLabel revealMe">length</p>
+                            <p class="dxInLabel revealMe">height</p>
+                        </div>
+                        
+                        <div class="dropdown open col-sm-2 nopadding">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="metricBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Meters
+                          </button>
+                          <div id="metricMenu" class="dropdown-menu" aria-labelledby="metricBtn">
+                            <a href="#" class="dropdown-item" data-name="Meters">Meters</a>
+                            <a href="#" class="dropdown-item" data-name="Feet">Feet</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div id="step3" class="modal-body row hidden">
+
+                        <div class="col-sm-12">
+                            <h6 id="imgLabel" class="b3header">Room Images</h6>
+                            <!-- Drop Zone -->
+                            <div class="col-sm-6 uploadWrapper">
+                                <div class="upload-drop-zone" id="dropZone">
+                                    Just drag and drop files here
+                                </div>
+
+                                <!-- Standar Form -->
+                                <form action="" method="post" enctype="multipart/form-data" id="uploadForm">
+                                    <div class="form-inline">
+                                        <div class="form-group inputWrapper">
+                                            <input type="file" name="files[]" class="fileInput" onchange="subBtnActivate();" id="uploadFiles">OR BROWSE
+                                        </div>
+                                        <button type="submit" class="btn btn-sm btn-primary hidden" id="uploadSubmit">Upload files</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-sm-6">
+
+                                <!-- Upload Finished -->
+                                <div id="uploadingQueue" class="list-group">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /container -->
+
+
+                    </div>
+                    <div id="step4" class="modal-body row hidden">
+                        <div class="col-sm-12">
+                            <h6 class="b3header">Contest Details</h6>
+                            <input type="text" id="titleInput" class="form-control" placeholder="Title"/></br>
+                            <textarea class="form-control" rows="5" id="descInput" placeholder="Description of overall contest."></textarea>
+                        </div>
+                        <div class="divider col-sm-12"><hr></div>
+                        <div class="col-sm-3">
+                            <h6 class="b3header">Contest Length</h6>
+                            
+                            <div class="dropdown open nopadding">
+                              <button class="btn btn-secondary dropdown-toggle" type="button" id="lengthBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select One
+                              </button>
+                              <div id="lengthMenu" class="dropdown-menu" aria-labelledby="lengthBtn">
+                                <a href="#" class="dropdown-item" data-value="2">2 Weeks</a>
+                                <a href="#" class="dropdown-item" data-value="3">3 Weeks</a>
+                                 <a href="#" class="dropdown-item" data-value="4">4 Weeks</a>
+                              </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-9">
+                            <h6 class="b3header">Contest Prize</h6>
+                            <span id="prizeVal" class="pull-xs-right">$500</span>
+                            <input type="range" id="prizeSlider" class="" value="500" min="200" max="15000" step="50" oninput="showPrizeValue(this.value);">
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="backBtn" type="button" class="btn btn-primary pull-xs-left hidden" onclick="backClick();">Back</button>
+                        <span id="modalError" class="center"></span>
+                        <button id="nextBtn" type="button" class="btn btn-primary" onclick="nextClick();">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Caption Modal -->
+    <div class="modal fade" id="captionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+               <div class="modal-header modal-header-sm">
+                        <button id="captionBtn" type="button" class="btn btn-sm btn-default pull-right" data-dismiss="modal">Done</button>
+                        <h5 class="modal-title">Add Caption</h5>
+                        
+                </div>
+                <div class="col-2m-12">
+                    <textarea class="form-control captionInput" rows="5" placeholder="Add brief photo caption"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+
+</body>
+
+</html>

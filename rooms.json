@@ -1,0 +1,8 @@
+var roomsData = [{"roomType": "Living Room", "features" : ["Decor", "Furniture", "Paint", "Flooring", "Lighting"]},
+                 
+                 {"roomType" : "Family Room", "features" :  ["Decor", "Furniture", "Paint", "Flooring", "Lighting"]},
+                  {"roomType" : "Dining Room", "features" :  ["Decor", "Furniture", "Paint", "Flooring", "Lighting"]},
+                  {"roomType" : "Bedroom", "features" :  ["Decor", "Furniture", "Paint", "Flooring", "Lighting"]},
+                  {"roomType" : "Bathroom", "features" :  ["Decor", "Furniture", "Paint", "Flooring", "Lighting", "Vanity", "Faucets"]},
+                  {"roomType" : "Kitchen", "features" :  ["Decor", "Furniture", "Paint", "Flooring", "Lighting", "Counter-Tops", "Faucets"]},
+                  {"roomType" : "Office", "features" :  ["Decor", "Furniture", "Paint", "Flooring", "Lighting"]}];           

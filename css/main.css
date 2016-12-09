@@ -1,0 +1,402 @@
+*{
+    
+    padding 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    font-family: 'Open Sans', sans-serif;
+}
+
+#step1 ul>li, #step2 ul#features>li{
+    
+    list-style: none;
+    width: 200px;
+    height: 50px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding:15px;
+    margin: 0px 5px 15px 5px;
+    float: left;
+    
+}
+
+.b3header{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.modal-footer{  
+    clear:both;
+}
+
+#step1 ul>li.selected, #step2 ul#features>li.selected, li.selected>span.fa-check.checked{
+    
+    border-color: dodgerblue;
+    color: dodgerblue;
+    
+}
+
+span.checkMark.fa.fa-check{
+    
+    color: white;
+}
+
+
+span.stacked-text{
+    
+    font-size: 12px;
+}
+
+#dimensions{
+    
+ float:left;   
+}
+
+/* layout.css Style */
+.upload-drop-zone {
+  height: 200px;
+  border-width: 1px;
+border-radius: 3px;
+    margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* skin.css Style*/
+.upload-drop-zone {
+  color: #e5e5e5;
+  border-style: dashed;
+  border-color: #e5e5e5;
+  line-height: 200px;
+  text-align: center
+}
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222;
+}
+
+#uploadingQueue{
+/*
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto
+*/
+    
+}
+
+textarea{
+    resize: none;
+}
+
+.caret {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+#lengthBtn{
+ text-align: left;  
+    margin-top:20px;
+}
+
+.btn-group {width: 100%}
+.dropdown-menu {width: 100%;}
+
+#modalError{
+     color: red;   
+}
+
+#dOptions{
+ float: left;   
+}
+
+ul.progress-indicator{
+ 
+    margin-top: 70px;
+    margin-bottom: 0px;
+    padding-bottom:0px;
+}
+
+ul.progress-indicator>li{
+    
+    padding-bottom: 57.5px;
+}
+
+div.prog-bar{
+    margin: 10px 0px 10px 0px;
+    border-right: 1px solid #e5e5e5;  
+    padding: 0px 10px 0px 10px;
+}
+div.prog-bar > ul{
+ padding: 0px 0px 15px 15px;   
+    
+}
+
+.hidden{
+ 
+    display:none !important;
+    
+}
+
+div.modal-body{
+ height: 400px;
+    padding: 10px 15px;
+    
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.inputWrapper {
+    color: white;
+    font-size:13px;
+    height: 32px;
+    width: 125px;
+    text-align: center;
+    padding-top: 8px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    /*Using a background color, but you can use a background image to represent a button*/
+    background-color: #83c0ff;
+    border-radius: 3px;
+}
+.fileInput {
+    cursor: pointer;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    /*This makes the button huge. If you want a bigger button, increase the font size*/
+    font-size:100px;
+    /*Opacity settings for all browsers*/
+    opacity: 0;
+    -moz-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+}
+
+span.bubble.finalStep:after{
+    
+ height: 0;   
+}
+
+.uploadWrapper{
+ 
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    padding-bottom: 20px;
+    
+}
+
+button.close.close-sm{
+    
+ font-size: 12px;   
+}
+
+p.progBar{
+    
+    display: block;
+    width: 5%;
+	padding: 0.5px 5px 0.5px 5px;
+	margin: 5px 0;
+	border: 1px solid #83c0ff;
+	border-radius: 5px;
+    background-color: #83c0ff;
+    -webkit-transition: width 2s ease-in-out;
+    -moz-transition: width 2s ease-in-out;
+    -o-transition: width 2s ease-in-out;
+    transition: width 2s ease-in-out;
+}
+p.progBar.loading{
+
+    width:80%;
+}
+
+p.progBar.loading.success{
+    
+    width: 100%;
+}
+
+span.addCaption{
+    
+    font-size: 12px;
+    color: #83c0ff;
+}
+
+span.addCaption:hover{
+    
+    color: dodgerblue;
+}
+
+span.pull-right{
+    
+   font-size: 12px;
+    color: #e5e5e5;
+}
+
+div.lineBreak{
+    margin: 5px;
+}
+
+input.dxIn{
+    
+    line-height: 2;
+    border: 0px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-left: 5px;
+    width: 24.8%;
+    margin-right: 6%;
+}
+
+h5#dxHeader{
+    margin: 0 0 30px 0;
+    
+}
+
+button#metricBtn{
+    
+    border: 0px;
+    width:100%;
+    text-align: left;
+    color: grey;
+    background: white;
+}
+
+p.dxInLabel{
+    float:left;
+    width: 31.5%;
+    padding: 3px;
+    padding-left: 5px;
+    color: #e5e5e5;
+    font-size: 12px;
+    -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+    opacity:0;
+}
+
+p.dxInLabel.revealMe{
+ opacity: 1;   
+}
+
+input.dxInFeet{
+    
+    line-height: 2;
+    border: 0px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-left: 5px;
+    width: 12%;  
+}
+input.dxInFeet:nth-child(even){
+    
+    margin-right:6%;
+    
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 7.2px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5.6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: rgba(45, 45, 80, 0.93);
+  border-radius: 3.9px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.92), 0px 0px 0px rgba(255, 255, 255, 0.92);
+  border: 2.5px solid #ffffff;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: #83c0ff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7.2px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgba(52, 52, 93, 0.93);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5.6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: rgba(45, 45, 80, 0.93);
+  border-radius: 3.9px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.92), 0px 0px 0px rgba(255, 255, 255, 0.92);
+  border: 2.5px solid #ffffff;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: #83c0ff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5.6px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: rgba(38, 38, 67, 0.93);
+  border: 0px solid #000000;
+  border-radius: 7.8px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: rgba(45, 45, 80, 0.93);
+  border: 0px solid #000000;
+  border-radius: 7.8px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.92), 0px 0px 0px rgba(255, 255, 255, 0.92);
+  border: 2.5px solid #ffffff;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: #83c0ff;
+  cursor: pointer;
+  height: 5.6px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: rgba(45, 45, 80, 0.93);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: rgba(52, 52, 93, 0.93);
+}
+
+
+.modal-xl {
+    width: 75%;
+    min-width:600px;
+   max-width:800px;
+
+  }
+
+
+.modal-header.modal-header-sm{
+    
+    padding: 5px; /* TODO CHANGE I DID THIS */
+}

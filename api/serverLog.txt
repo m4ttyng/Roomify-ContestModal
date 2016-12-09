@@ -1,0 +1,13 @@
+[2016-03-2823:00:03] > startg test
+[2016-03-2823:00:03] > 
+[2016-03-2823:01:33] > startg test
+[2016-03-2823:01:33] > You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`projects`(`project_title`, `project_desc`, `closing_date`, `creator_id`, `state' at line 1
+[2016-03-2823:03:13] > success
+[2016-03-2823:06:54] > 
+[2016-03-2823:06:54] > success
+[2016-03-2823:08:11] > 
+[2016-03-2823:08:11] > success
+[2016-03-2823:09:47] > success
+[2016-03-2823:10:10] > You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`projects`(`project_title`, `project_desc`, `closing_date`, `creator_id`, `state' at line 1
+[2016-03-2905:27:48] > success
+[2016-03-2906:11:39] > success
